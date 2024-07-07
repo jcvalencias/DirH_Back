@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from .Variables import password
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -59,7 +60,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, '../Front/front/build')
+            os.path.join(BASE_DIR, '../../Front/front/build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -81,8 +82,12 @@ WSGI_APPLICATION = 'DirH.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'DirH',
+        'USER': 'postgres',
+        'PASSWORD': password,
+        'HOST': 'localhost',  # Cambia esto por la IP de tu computadora
+        'PORT': '5432',
     }
 }
 
@@ -123,9 +128,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_FILES_DIR = os.path.join(BASE_DIR, '../Front/front/build/static')
+STATICFILES_DIR = os.path.join(BASE_DIR, '../../Front/front/build/static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = BASE_DIR/'media'
