@@ -2,4 +2,4 @@
 
 API_key =''
 key = ''
-password = 'preuba'
+password = 'prueba'
