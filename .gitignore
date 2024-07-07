@@ -1,5 +1,8 @@
 DirH/db.sqlite3
 
+DirH/DirH/Variables.py
+
+//Variables.py
 
 *.sqlite3
 *.txt
