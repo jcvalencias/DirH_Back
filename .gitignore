@@ -1,0 +1,7 @@
+.DirH/DirH/db.squlite3
+
+
+*.squlite3
+*.txt
+
+.env
