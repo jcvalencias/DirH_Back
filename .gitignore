@@ -1,7 +1,7 @@
-.DirH/db.squlite3
+.DirH/db.sqlite3
 
 
-*.squlite3
+*.sqlite3
 *.txt
 
 .env
